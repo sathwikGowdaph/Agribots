@@ -60,13 +60,9 @@
     --shadow-strong: 0 8px 24px hsl(120 12% 15% / 0.16);
     --shadow-glow: 0 0 20px hsl(142 72% 40% / 0.3);
     
-  /* Animation utilities */
-  --transition-fast: all 0.15s ease-out;
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  
-  /* Voice assistant animations */
-  --pulse-animation: pulse 2s infinite;
+    /* Smooth Transitions */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
     --radius: 0.75rem;
   }
@@ -150,23 +146,5 @@
   .touch-target {
     min-height: 48px;
     min-width: 48px;
-  }
-
-  /* Voice assistant animations */
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-  }
-
-  .animation-delay-75 {
-    animation-delay: 75ms;
-  }
-
-  .animation-delay-150 {
-    animation-delay: 150ms;
   }
 }
