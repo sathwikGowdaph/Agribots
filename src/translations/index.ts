@@ -1,215 +1,251 @@
 export const translations = {
   en: {
     appName: "CropCare AI",
-    tagline: "Smart Disease Detection",
     nav: {
+      home: "Home",
       detect: "Detect Disease",
       community: "Community",
-      features: "Features",
+      features: "Features"
     },
     hero: {
-      title: "Protect Your Crops with AI-Powered Disease Detection",
-      subtitle: "Get instant, accurate diagnosis of crop diseases with our advanced AI technology. Trusted by thousands of farmers worldwide.",
-      features: {
-        aiDetection: "AI Detection",
-        instantResults: "Instant Results",
-        community: "Community Support",
-        offlineMode: "Offline Ready",
-      },
-      cta: {
-        primary: "Start Detection",
-        secondary: "Learn More",
-      },
+      title: "Smart Crop Disease Detection",
+      subtitle: "Protect your harvest with AI-powered disease identification. Get instant diagnosis and treatment recommendations.",
+      cta: "Start Detection",
       stats: {
-        accuracy: "95%+ Accuracy",
         diseases: "1500+ Diseases",
-        farmers: "10k+ Farmers",
-      },
+        accuracy: "99% Accuracy", 
+        farmers: "10K+ Farmers"
+      }
     },
     detection: {
-      title: "Crop Disease Detection",
-      subtitle: "Take a photo of your crop to get instant disease diagnosis",
+      title: "AI-Powered Disease Detection",
+      subtitle: "Upload a photo of your crop and get instant diagnosis with treatment recommendations",
       buttons: {
-        camera: "Open Camera",
-        upload: "Upload Photo",
-        detect: "Detect Disease",
+        camera: "Take Photo",
+        upload: "Upload Image",
+        detect: "Analyze Crop"
       },
       results: {
         title: "Detection Results",
         confidence: "Confidence",
-        treatment: "Recommended Treatment",
-        prevention: "Prevention Tips",
-      },
+        treatment: "Immediate Treatment",
+        prevention: "Prevention Tips"
+      }
+    },
+    voice: {
+      assistant: "Scout",
+      greeting: "Hi! I'm Scout, your farming assistant. How can I help you today?",
+      listening: "Listening...",
+      speaking: "Speaking...",
+      tapToTalk: "Tap to talk",
+      tryAgain: "Try Again",
+      moreTips: "More Tips"
     },
     community: {
-      title: "Farmer Community",
-      subtitle: "Connect with fellow farmers and share experiences",
-      askQuestion: "Ask Question",
-      recentDiscussions: "Recent Discussions",
+      title: "Join Our Farming Community",
+      subtitle: "Connect with thousands of farmers, share experiences, and learn from experts",
+      stats: {
+        farmers: "Active Farmers",
+        questions: "Questions Answered", 
+        experts: "Agricultural Experts"
+      },
+      cta: "Join Community"
     },
     features: {
       title: "Why Choose CropCare AI?",
       subtitle: "Advanced features designed specifically for farmers",
-      items: {
-        aiPowered: {
-          title: "AI-Powered Detection",
-          description: "Advanced machine learning algorithms trained on thousands of crop disease images.",
+      items: [
+        {
+          title: "99% Accuracy",
+          description: "State-of-the-art AI models trained on millions of crop images"
         },
-        multilingual: {
-          title: "Multilingual Support",
-          description: "Available in Hindi, Kannada, and English for better accessibility.",
+        {
+          title: "Instant Results", 
+          description: "Get diagnosis and treatment recommendations in seconds"
         },
-        offline: {
-          title: "Offline Capability",
-          description: "Works without internet connection, perfect for rural areas.",
+        {
+          title: "1500+ Diseases",
+          description: "Comprehensive database covering all major crop diseases"
         },
-        community: {
+        {
+          title: "Offline Support",
+          description: "Works without internet connection for remote farming areas"
+        },
+        {
+          title: "Multi-language",
+          description: "Available in Kannada, Hindi, English and more Indian languages"
+        },
+        {
           title: "Expert Community",
-          description: "Get advice from agricultural experts and experienced farmers.",
-        },
-      },
-    },
-  },
-  hi: {
-    appName: "क्रॉपकेयर AI",
-    tagline: "स्मार्ट रोग पहचान",
-    nav: {
-      detect: "रोग पहचानें",
-      community: "समुदाय",
-      features: "सुविधाएं",
-    },
-    hero: {
-      title: "AI-संचालित रोग पहचान के साथ अपनी फसलों की सुरक्षा करें",
-      subtitle: "हमारी उन्नत AI तकनीक के साथ फसल रोगों का तत्काल, सटीक निदान प्राप्त करें। दुनिया भर के हजारों किसानों द्वारा भरोसा किया गया।",
-      features: {
-        aiDetection: "AI पहचान",
-        instantResults: "तत्काल परिणाम",
-        community: "समुदाय समर्थन",
-        offlineMode: "ऑफलाइन तैयार",
-      },
-      cta: {
-        primary: "पहचान शुरू करें",
-        secondary: "और जानें",
-      },
-      stats: {
-        accuracy: "95%+ सटीकता",
-        diseases: "1500+ रोग",
-        farmers: "10k+ किसान",
-      },
-    },
-    detection: {
-      title: "फसल रोग पहचान",
-      subtitle: "तत्काल रोग निदान के लिए अपनी फसल की फोटो लें",
-      buttons: {
-        camera: "कैमरा खोलें",
-        upload: "फोटो अपलोड करें",
-        detect: "रोग पहचानें",
-      },
-      results: {
-        title: "पहचान परिणाम",
-        confidence: "विश्वास",
-        treatment: "अनुशंसित उपचार",
-        prevention: "रोकथाम सुझाव",
-      },
-    },
-    community: {
-      title: "किसान समुदाय",
-      subtitle: "साथी किसानों से जुड़ें और अनुभव साझा करें",
-      askQuestion: "प्रश्न पूछें",
-      recentDiscussions: "हाल की चर्चाएं",
-    },
-    features: {
-      title: "क्रॉपकेयर AI क्यों चुनें?",
-      subtitle: "किसानों के लिए विशेष रूप से डिज़ाइन की गई उन्नत सुविधाएं",
-      items: {
-        aiPowered: {
-          title: "AI-संचालित पहचान",
-          description: "हजारों फसल रोग छवियों पर प्रशिक्षित उन्नत मशीन लर्निंग एल्गोरिदम।",
-        },
-        multilingual: {
-          title: "बहुभाषी समर्थन",
-          description: "बेहतर पहुंच के लिए हिंदी, कन्नड़ और अंग्रेजी में उपलब्ध।",
-        },
-        offline: {
-          title: "ऑफलाइन क्षमता",
-          description: "इंटरनेट कनेक्शन के बिना काम करता है, ग्रामीण क्षेत्रों के लिए परफेक्ट।",
-        },
-        community: {
-          title: "विशेषज्ञ समुदाय",
-          description: "कृषि विशेषज्ञों और अनुभवी किसानों से सलाह लें।",
-        },
-      },
-    },
+          description: "Connect with agricultural experts and fellow farmers"
+        }
+      ]
+    }
   },
   kn: {
-    appName: "ಕ್ರೋಪ್‌ಕೇರ್ AI",
-    tagline: "ಸ್ಮಾರ್ಟ್ ರೋಗ ಪತ್ತೆ",
+    appName: "ಕ್ರಾಪ್‌ಕೇರ್ AI",
     nav: {
-      detect: "ರೋಗ ಪತ್ತೆ ಮಾಡಿ",
+      home: "ಮುಖ್ಯ",
+      detect: "ರೋಗ ಪತ್ತೆ",
       community: "ಸಮುದಾಯ",
-      features: "ವೈಶಿಷ್ಟ್ಯಗಳು",
+      features: "ವೈಶಿಷ್ಟ್ಯಗಳು"
     },
     hero: {
-      title: "AI-ಚಾಲಿತ ರೋಗ ಪತ್ತೆಯೊಂದಿಗೆ ನಿಮ್ಮ ಬೆಳೆಗಳನ್ನು ರಕ್ಷಿಸಿ",
-      subtitle: "ನಮ್ಮ ಸುಧಾರಿತ AI ತಂತ್ರಜ್ಞಾನದೊಂದಿಗೆ ಬೆಳೆ ರೋಗಗಳ ತ್ವರಿತ, ನಿಖರ ರೋಗನಿರ್ಣಯವನ್ನು ಪಡೆಯಿರಿ। ವಿಶ್ವದಾದ್ಯಂತ ಸಾವಿರಾರು ರೈತರು ನಂಬಿದ್ದಾರೆ.",
-      features: {
-        aiDetection: "AI ಪತ್ತೆ",
-        instantResults: "ತ್ವರಿತ ಫಲಿತಾಂಶಗಳು",
-        community: "ಸಮುದಾಯ ಬೆಂಬಲ",
-        offlineMode: "ಆಫ್‌ಲೈನ್ ಸಿದ್ಧ",
-      },
-      cta: {
-        primary: "ಪತ್ತೆ ಪ್ರಾರಂಭಿಸಿ",
-        secondary: "ಹೆಚ್ಚು ತಿಳಿಯಿರಿ",
-      },
+      title: "ಸ್ಮಾರ್ಟ್ ಬೆಳೆ ರೋಗ ಪತ್ತೆ",
+      subtitle: "AI-ಚಾಲಿತ ರೋಗ ಗುರುತಿಸುವಿಕೆಯೊಂದಿಗೆ ನಿಮ್ಮ ಸುಗ್ಗಿಯನ್ನು ರಕ್ಷಿಸಿ. ತ್ವರಿತ ರೋಗನಿರ್ಣಯ ಮತ್ತು ಚಿಕಿತ್ಸೆ ಶಿಫಾರಸುಗಳನ್ನು ಪಡೆಯಿರಿ.",
+      cta: "ಪತ್ತೆ ಪ್ರಾರಂಭಿಸಿ",
       stats: {
-        accuracy: "95%+ ನಿಖರತೆ",
         diseases: "1500+ ರೋಗಗಳು",
-        farmers: "10k+ ರೈತರು",
-      },
+        accuracy: "99% ನಿಖರತೆ",
+        farmers: "10K+ ರೈತರು"
+      }
     },
     detection: {
-      title: "ಬೆಳೆ ರೋಗ ಪತ್ತೆ",
-      subtitle: "ತ್ವರಿತ ರೋಗ ರೋಗನಿರ್ಣಯಕ್ಕಾಗಿ ನಿಮ್ಮ ಬೆಳೆಯ ಫೋಟೋ ತೆಗೆಯಿರಿ",
+      title: "AI-ಚಾಲಿತ ರೋಗ ಪತ್ತೆ",
+      subtitle: "ನಿಮ್ಮ ಬೆಳೆಯ ಫೋಟೋವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ ಮತ್ತು ಚಿಕಿತ್ಸೆ ಶಿಫಾರಸುಗಳೊಂದಿಗೆ ತ್ವರಿತ ರೋಗನಿರ್ಣಯವನ್ನು ಪಡೆಯಿರಿ",
       buttons: {
-        camera: "ಕ್ಯಾಮೆರಾ ತೆರೆಯಿರಿ",
-        upload: "ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
-        detect: "ರೋಗ ಪತ್ತೆ ಮಾಡಿ",
+        camera: "ಫೋಟೋ ತೆಗೆಯಿರಿ",
+        upload: "ಚಿತ್ರ ಅಪ್‌ಲೋಡ್",
+        detect: "ಬೆಳೆ ವಿಶ್ಲೇಷಣೆ"
       },
       results: {
         title: "ಪತ್ತೆ ಫಲಿತಾಂಶಗಳು",
         confidence: "ವಿಶ್ವಾಸ",
-        treatment: "ಶಿಫಾರಸು ಚಿಕಿತ್ಸೆ",
-        prevention: "ತಡೆಗಟ್ಟುವಿಕೆ ಸಲಹೆಗಳು",
-      },
+        treatment: "ತ್ವರಿತ ಚಿಕಿತ್ಸೆ",
+        prevention: "ತಡೆಗಟ್ಟುವ ಸಲಹೆಗಳು"
+      }
+    },
+    voice: {
+      assistant: "Scout",
+      greeting: "ನಮಸ್ಕಾರ! ನಾನು Scout, ನಿಮ್ಮ ಕೃಷಿ ಸಹಾಯಕ. ನಾನು ಇಂದು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
+      listening: "ಕೇಳುತ್ತಿದ್ದೇನೆ...",
+      speaking: "ಮಾತನಾಡುತ್ತಿದ್ದೇನೆ...",
+      tapToTalk: "ಮಾತನಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ",
+      tryAgain: "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+      moreTips: "ಹೆಚ್ಚಿನ ಸಲಹೆಗಳು"
     },
     community: {
-      title: "ರೈತ ಸಮುದಾಯ",
-      subtitle: "ಸಹ ರೈತರೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಿ ಮತ್ತು ಅನುಭವಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ",
-      askQuestion: "ಪ್ರಶ್ನೆ ಕೇಳಿ",
-      recentDiscussions: "ಇತ್ತೀಚಿನ ಚರ್ಚೆಗಳು",
+      title: "ನಮ್ಮ ಕೃಷಿ ಸಮುದಾಯವನ್ನು ಸೇರಿ",
+      subtitle: "ಸಾವಿರಾರು ರೈತರೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಿ, ಅನುಭವಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ ಮತ್ತು ತಜ್ಞರಿಂದ ಕಲಿಯಿರಿ",
+      stats: {
+        farmers: "ಸಕ್ರಿಯ ರೈತರು",
+        questions: "ಉತ್ತರಿಸಿದ ಪ್ರಶ್ನೆಗಳು",
+        experts: "ಕೃಷಿ ತಜ್ಞರು"
+      },
+      cta: "ಸಮುದಾಯವನ್ನು ಸೇರಿ"
     },
     features: {
-      title: "ಕ್ರೋಪ್‌ಕೇರ್ AI ಅನ್ನು ಏಕೆ ಆರಿಸಬೇಕು?",
+      title: "ಕ್ರಾಪ್‌ಕೇರ್ AI ಅನ್ನು ಏಕೆ ಆಯ್ಕೆ ಮಾಡಬೇಕು?",
       subtitle: "ರೈತರಿಗಾಗಿ ವಿಶೇಷವಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸುಧಾರಿತ ವೈಶಿಷ್ಟ್ಯಗಳು",
-      items: {
-        aiPowered: {
-          title: "AI-ಚಾಲಿತ ಪತ್ತೆ",
-          description: "ಸಾವಿರಾರು ಬೆಳೆ ರೋಗ ಚಿತ್ರಗಳ ಮೇಲೆ ತರಬೇತಿ ಪಡೆದ ಸುಧಾರಿತ ಮೆಷಿನ್ ಲರ್ನಿಂಗ್ ಅಲ್ಗೋರಿದಮ್‌ಗಳು.",
+      items: [
+        {
+          title: "99% ನಿಖರತೆ",
+          description: "ಲಕ್ಷಾಂತರ ಬೆಳೆ ಚಿತ್ರಗಳಲ್ಲಿ ತರಬೇತಿ ಪಡೆದ ಅತ್ಯಾಧುನಿಕ AI ಮಾದರಿಗಳು"
         },
-        multilingual: {
-          title: "ಬಹುಭಾಷೆ ಬೆಂಬಲ",
-          description: "ಉತ್ತಮ ಪ್ರವೇಶಕ್ಕಾಗಿ ಹಿಂದಿ, ಕನ್ನಡ ಮತ್ತು ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ ಲಭ್ಯವಿದೆ.",
+        {
+          title: "ತ್ವರಿತ ಫಲಿತಾಂಶಗಳು",
+          description: "ಸೆಕೆಂಡುಗಳಲ್ಲಿ ರೋಗನಿರ್ಣಯ ಮತ್ತು ಚಿಕಿತ್ಸೆ ಶಿಫಾರಸುಗಳನ್ನು ಪಡೆಯಿರಿ"
         },
-        offline: {
-          title: "ಆಫ್‌ಲೈನ್ ಸಾಮರ್ಥ್ಯ",
-          description: "ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕವಿಲ್ಲದೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ, ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಿಗೆ ಪರಿಪೂರ್ಣ.",
+        {
+          title: "1500+ ರೋಗಗಳು",
+          description: "ಎಲ್ಲ ಪ್ರಮುಖ ಬೆಳೆ ರೋಗಗಳನ್ನು ಒಳಗೊಂಡ ಸಮಗ್ರ ದತ್ತಸಂಚಯ"
         },
-        community: {
-          title: "ತಜ್ಞ ಸಮುದಾಯ",
-          description: "ಕೃಷಿ ತಜ್ಞರು ಮತ್ತು ಅನುಭವಿ ರೈತರಿಂದ ಸಲಹೆ ಪಡೆಯಿರಿ.",
+        {
+          title: "ಆಫ್‌ಲೈನ್ ಬೆಂಬಲ",
+          description: "ದೂರದ ಕೃಷಿ ಪ್ರದೇಶಗಳಿಗಾಗಿ ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕವಿಲ್ಲದೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ"
         },
-      },
-    },
+        {
+          title: "ಬಹು-ಭಾಷೆ",
+          description: "ಕನ್ನಡ, ಹಿಂದಿ, ಇಂಗ್ಲಿಷ್ ಮತ್ತು ಹೆಚ್ಚಿನ ಭಾರತೀಯ ಭಾಷೆಗಳಲ್ಲಿ ಲಭ್ಯ"
+        },
+        {
+          title: "ತಜ್ಞರ ಸಮುದಾಯ",
+          description: "ಕೃಷಿ ತಜ್ಞರು ಮತ್ತು ಸಹ ರೈತರೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಿ"
+        }
+      ]
+    }
   },
+  hi: {
+    appName: "क्रॉपकेयर AI",
+    nav: {
+      home: "होम",
+      detect: "रोग पहचान",
+      community: "समुदाय",
+      features: "सुविधाएं"
+    },
+    hero: {
+      title: "स्मार्ट फसल रोग पहचान",
+      subtitle: "AI-संचालित रोग पहचान के साथ अपनी फसल की रक्षा करें। तत्काल निदान और उपचार की सिफारिशें प्राप्त करें।",
+      cta: "पहचान शुरू करें",
+      stats: {
+        diseases: "1500+ रोग",
+        accuracy: "99% सटीकता",
+        farmers: "10K+ किसान"
+      }
+    },
+    detection: {
+      title: "AI-संचालित रोग पहचान",
+      subtitle: "अपनी फसल की फोटो अपलोड करें और उपचार की सिफारिशों के साथ तत्काल निदान प्राप्त करें",
+      buttons: {
+        camera: "फोटो लें",
+        upload: "छवि अपलोड करें",
+        detect: "फसल का विश्लेषण करें"
+      },
+      results: {
+        title: "पहचान परिणाम",
+        confidence: "विश्वास",
+        treatment: "तत्काल उपचार",
+        prevention: "रोकथाम के उपाय"
+      }
+    },
+    voice: {
+      assistant: "Scout",
+      greeting: "नमस्ते! मैं Scout हूं, आपका कृषि सहायक। आज मैं आपकी कैसे मदद कर सकता हूं?",
+      listening: "सुन रहा हूं...",
+      speaking: "बोल रहा हूं...",
+      tapToTalk: "बात करने के लिए टैप करें",
+      tryAgain: "फिर कोशिश करें",
+      moreTips: "और सुझाव"
+    },
+    community: {
+      title: "हमारे कृषि समुदाय से जुड़ें",
+      subtitle: "हजारों किसानों से जुड़ें, अनुभव साझा करें, और विशेषज्ञों से सीखें",
+      stats: {
+        farmers: "सक्रिय किसान",
+        questions: "उत्तरित प्रश्न",
+        experts: "कृषि विशेषज्ञ"
+      },
+      cta: "समुदाय में शामिल हों"
+    },
+    features: {
+      title: "क्रॉपकेयर AI क्यों चुनें?",
+      subtitle: "किसानों के लिए विशेष रूप से डिज़ाइन की गई उन्नत सुविधाएं",
+      items: [
+        {
+          title: "99% सटीकता",
+          description: "लाखों फसल छवियों पर प्रशिक्षित अत्याधुनिक AI मॉडल"
+        },
+        {
+          title: "तत्काल परिणाम",
+          description: "सेकंडों में निदान और उपचार की सिफारिशें प्राप्त करें"
+        },
+        {
+          title: "1500+ रोग",
+          description: "सभी प्रमुख फसल रोगों को कवर करने वाला व्यापक डेटाबेस"
+        },
+        {
+          title: "ऑफ़लाइन समर्थन",
+          description: "दूरदराज के कृषि क्षेत्रों के लिए इंटरनेट कनेक्शन के बिना काम करता है"
+        },
+        {
+          title: "बहु-भाषा",
+          description: "कन्नड़, हिंदी, अंग्रेजी और अधिक भारतीय भाषाओं में उपलब्ध"
+        },
+        {
+          title: "विशेषज्ञ समुदाय",
+          description: "कृषि विशेषज्ञों और साथी किसानों से जुड़ें"
+        }
+      ]
+    }
+  }
 };

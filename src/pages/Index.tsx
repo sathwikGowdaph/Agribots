@@ -4,6 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import DetectionSection from '@/components/DetectionSection';
 import CommunitySection from '@/components/CommunitySection';
 import FeaturesSection from '@/components/FeaturesSection';
+import FloatingMicButton from '@/components/FloatingMicButton';
 import { translations } from '@/translations';
 
 const Index = () => {
@@ -42,6 +43,12 @@ const Index = () => {
         
         <FeaturesSection translations={currentTranslations} />
       </main>
+
+      {/* Voice Assistant */}
+      <FloatingMicButton 
+        translations={currentTranslations} 
+        language={currentLanguage === 'kn' ? 'kn-IN' : currentLanguage === 'hi' ? 'hi-IN' : 'en-US'}
+      />
 
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-12">
