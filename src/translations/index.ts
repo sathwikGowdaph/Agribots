@@ -1,6 +1,7 @@
 export const translations = {
   en: {
-    appName: "CropCare AI",
+    lang: "en",
+    appName: "Agribot AI",
     tagline: "Smart Disease Detection",
     nav: {
       detect: "Detect Disease",
@@ -71,7 +72,8 @@ export const translations = {
     },
   },
   hi: {
-    appName: "क्रॉपकेयर AI",
+    lang: "hi",
+    appName: "एग्रीबॉट AI",
     tagline: "स्मार्ट रोग पहचान",
     nav: {
       detect: "रोग पहचानें",
@@ -142,7 +144,8 @@ export const translations = {
     },
   },
   kn: {
-    appName: "ಕ್ರೋಪ್‌ಕೇರ್ AI",
+    lang: "kn",
+    appName: "ಅಗ್ರಿಬಾಟ್ AI",
     tagline: "ಸ್ಮಾರ್ಟ್ ರೋಗ ಪತ್ತೆ",
     nav: {
       detect: "ರೋಗ ಪತ್ತೆ ಮಾಡಿ",
