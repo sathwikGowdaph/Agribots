@@ -3,6 +3,7 @@ import { Camera, Upload, Scan, CheckCircle, AlertTriangle, Lightbulb } from 'luc
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { getRandomDisease } from '@/data/diseases';
 
 interface DetectionSectionProps {
   translations: any;
@@ -31,32 +32,10 @@ const DetectionSection: React.FC<DetectionSectionProps> = ({ translations }) => 
     
     setIsDetecting(true);
     
-    // Mock detection result with multilingual responses - in real app, this would call AI service
+    // Mock detection result using comprehensive disease database - in real app, this would call AI service
     setTimeout(() => {
-      setDetectionResult({
-        disease: {
-          en: "Late Blight",
-          hi: "लेट ब्लाइट (पछेता अंगमारी)",
-          kn: "ಲೇಟ್ ಬ್ಲೈಟ್ (ತಡವಾದ ಕುಗ್ಗುವಿಕೆ)"
-        },
-        confidence: 94,
-        severity: "Moderate",
-        crop: {
-          en: "Tomato",
-          hi: "टमाटर",
-          kn: "ಟೊಮ್ಯಾಟೊ"
-        },
-        treatment: {
-          en: "• Apply copper-based fungicide immediately\n• Remove infected leaves and destroy them\n• Improve air circulation around plants\n• Water at soil level, not on leaves\n• Apply treatment in early morning or evening",
-          hi: "• तुरंत कॉपर आधारित फफूंदनाशी का छिड़काव करें\n• संक्रमित पत्तियों को हटाकर नष्ट कर दें\n• पौधों के चारों ओर हवा का संचार बेहतर बनाएं\n• पत्तियों पर नहीं, मिट्टी के स्तर पर पानी दें\n• सुबह जल्दी या शाम को उपचार करें",
-          kn: "• ತಕ್ಷಣ ತಾಮ್ರ ಆಧಾರಿತ ಶಿಲಾರಸವನ್ನು ಸಿಂಪಡಿಸಿ\n• ಸೋಂಕಿತ ಎಲೆಗಳನ್ನು ತೆಗೆದು ನಾಶಮಾಡಿ\n• ಸಸ್ಯಗಳ ಸುತ್ತ ಗಾಳಿ ಪ್ರಸರಣವನ್ನು ಸುಧಾರಿಸಿ\n• ಎಲೆಗಳ ಮೇಲೆ ಅಲ್ಲ, ಮಣ್ಣಿನ ಮಟ್ಟದಲ್ಲಿ ನೀರು ಹಾಕಿ\n• ಬೆಳಿಗ್ಗೆ ಅಥವಾ ಸಂಜೆ ಚಿಕಿತ್ಸೆ ಮಾಡಿ"
-        },
-        prevention: {
-          en: "• Plant disease-resistant tomato varieties\n• Maintain proper spacing between plants\n• Avoid overhead watering systems\n• Apply preventive fungicide spray monthly\n• Practice crop rotation with non-solanaceous crops",
-          hi: "• रोग प्रतिरोधी टमाटर की किस्में लगाएं\n• पौधों के बीच उचित दूरी बनाए रखें\n• ऊपर से पानी देने की व्यवस्था से बचें\n• मासिक रूप से निवारक फफूंदनाशी का छिड़काव करें\n• सोलेनेसी परिवार की फसलों के अतिरिक्त अन्य फसलों के साथ फसल चक्र अपनाएं",
-          kn: "• ರೋಗ ನಿರೋಧಕ ಟೊಮ್ಯಾಟೊ ಪ್ರಭೇದಗಳನ್ನು ನೆಡಿ\n• ಸಸ್ಯಗಳ ನಡುವೆ ಸರಿಯಾದ ಅಂತರವನ್ನು ಕಾಯ್ದುಕೊಳ್ಳಿ\n• ಮೇಲಿನಿಂದ ನೀರುಣಿಸುವ ವ್ಯವಸ್ಥೆಯನ್ನು ತಪ್ಪಿಸಿ\n• ಮಾಸಿಕ ತಡೆಗಟ್ಟುವ ಶಿಲಾರಸ ಸಿಂಪಡಣೆ ಮಾಡಿ\n• ಸೊಲೆನೇಸಿಯಸ್ ಅಲ್ಲದ ಬೆಳೆಗಳೊಂದಿಗೆ ಬೆಳೆ ಸರದಿ ಅಭ್ಯಾಸ ಮಾಡಿ"
-        }
-      });
+      const randomDisease = getRandomDisease();
+      setDetectionResult(randomDisease);
       setIsDetecting(false);
     }, 2000);
   };
