@@ -20,7 +20,7 @@ const Index = () => {
     }
   };
 
-  const currentTranslations = translations[currentLanguage as keyof typeof translations];
+  const currentTranslations = translations[currentLanguage as keyof typeof translations] || translations.en;
 
   return (
     <div className="min-h-screen bg-background">

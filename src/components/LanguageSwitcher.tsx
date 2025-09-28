@@ -18,10 +18,6 @@ const languages: Language[] = [
   { code: "en", name: "English", nativeName: "English" },
   { code: "hi", name: "Hindi", nativeName: "हिन्दी" },
   { code: "kn", name: "Kannada", nativeName: "ಕನ್ನಡ" },
-  { code: "ta", name: "Tamil", nativeName: "தமிழ்" },
-  { code: "te", name: "Telugu", nativeName: "తెలుగు" },
-  { code: "bn", name: "Bengali", nativeName: "বাংলা" },
-  { code: "mr", name: "Marathi", nativeName: "मराठी" },
 ];
 
 interface LanguageSwitcherProps {
@@ -38,7 +34,8 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   useEffect(() => {
     // Load saved language from localStorage
     const savedLang = localStorage.getItem("appLanguage");
-    if (savedLang) {
+    const validLanguages = languages.map(lang => lang.code);
+    if (savedLang && validLanguages.includes(savedLang)) {
       setSelectedLang(savedLang);
       onLanguageChange(savedLang);
     }
