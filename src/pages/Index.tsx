@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import DetectionSection from '@/components/DetectionSection';
+import AgribotChat from '@/components/AgribotChat';
 import CommunitySection from '@/components/CommunitySection';
 import FeaturesSection from '@/components/FeaturesSection';
 import { translations } from '@/translations';
@@ -37,6 +38,12 @@ const Index = () => {
         />
         
         <DetectionSection translations={currentTranslations} currentLanguage={currentLanguage} />
+        
+        <section id="chatbot" className="py-20 bg-background">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <AgribotChat currentLanguage={currentLanguage} translations={currentTranslations} />
+          </div>
+        </section>
         
         <CommunitySection translations={currentTranslations} />
         

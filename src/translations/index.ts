@@ -70,6 +70,13 @@ export const translations = {
         },
       },
     },
+    chatbot: {
+      title: "Agribot AI Assistant",
+      subtitle: "Ask me about crop diseases, pests, and treatments",
+      welcomeMessage: "Welcome! Ask me any question about crop diseases or pests.",
+      placeholder: "Ask about crop diseases, pests, or treatments...",
+      disclaimer: "AI assistant for farming guidance. Always consult with agricultural experts for serious issues.",
+    },
   },
   hi: {
     lang: "hi",
@@ -142,6 +149,13 @@ export const translations = {
         },
       },
     },
+    chatbot: {
+      title: "एग्रीबॉट AI सहायक",
+      subtitle: "फसल रोगों, कीटों और उपचार के बारे में मुझसे पूछें",
+      welcomeMessage: "स्वागत है! फसल रोगों या कीटों के बारे में मुझसे कोई भी सवाल पूछें।",
+      placeholder: "फसल रोगों, कीटों या उपचार के बारे में पूछें...",
+      disclaimer: "खेती मार्गदर्शन के लिए AI सहायक। गंभीर समस्याओं के लिए हमेशा कृषि विशेषज्ञों से परामर्श लें।",
+    },
   },
   kn: {
     lang: "kn",
@@ -213,6 +227,13 @@ export const translations = {
           description: "ಕೃಷಿ ತಜ್ಞರು ಮತ್ತು ಅನುಭವಿ ರೈತರಿಂದ ಸಲಹೆ ಪಡೆಯಿರಿ.",
         },
       },
+    },
+    chatbot: {
+      title: "ಅಗ್ರಿಬಾಟ್ AI ಸಹಾಯಕ",
+      subtitle: "ಬೆಳೆ ರೋಗಗಳು, ಕೀಟಗಳು ಮತ್ತು ಚಿಕಿತ್ಸೆಗಳ ಬಗ್ಗೆ ನನ್ನನ್ನು ಕೇಳಿ",
+      welcomeMessage: "ಸ್ವಾಗತ! ಬೆಳೆ ರೋಗಗಳು ಅಥವಾ ಕೀಟಗಳ ಬಗ್ಗೆ ಯಾವುದೇ ಪ್ರಶ್ನೆಯನ್ನು ಕೇಳಿ.",
+      placeholder: "ಬೆಳೆ ರೋಗಗಳು, ಕೀಟಗಳು ಅಥವಾ ಚಿಕಿತ್ಸೆಗಳ ಬಗ್ಗೆ ಕೇಳಿ...",
+      disclaimer: "ಕೃಷಿ ಮಾರ್ಗದರ್ಶನಕ್ಕಾಗಿ AI ಸಹಾಯಕ. ಗಂಭೀರ ಸಮಸ್ಯೆಗಳಿಗೆ ಯಾವಾಗಲೂ ಕೃಷಿ ತಜ್ಞರನ್ನು ಸಂಪರ್ಕಿಸಿ.",
     },
   },
 };
