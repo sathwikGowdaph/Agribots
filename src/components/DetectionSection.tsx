@@ -47,42 +47,65 @@ const DetectionSection: React.FC<DetectionSectionProps> = ({ translations, curre
     alert("Camera functionality would open here. For demo, please use upload instead.");
   };
 
-  const generateSpokenText = (result: any, lang: string): string => {
-    const disease = typeof result.disease === 'string' ? result.disease : result.disease[lang];
-    const crop = typeof result.crop === 'string' ? result.crop : result.crop[lang];
-    const treatment = typeof result.treatment === 'string' ? result.treatment : result.treatment[lang];
-    const prevention = typeof result.prevention === 'string' ? result.prevention : result.prevention[lang];
+  const generateMultilingualText = (result: any): { en: string; hi: string; kn: string } => {
+    const disease = {
+      en: typeof result.disease === 'string' ? result.disease : result.disease.en,
+      hi: typeof result.disease === 'string' ? result.disease : result.disease.hi,
+      kn: typeof result.disease === 'string' ? result.disease : result.disease.kn,
+    };
+    const crop = {
+      en: typeof result.crop === 'string' ? result.crop : result.crop.en,
+      hi: typeof result.crop === 'string' ? result.crop : result.crop.hi,
+      kn: typeof result.crop === 'string' ? result.crop : result.crop.kn,
+    };
+    const treatment = {
+      en: typeof result.treatment === 'string' ? result.treatment : result.treatment.en,
+      hi: typeof result.treatment === 'string' ? result.treatment : result.treatment.hi,
+      kn: typeof result.treatment === 'string' ? result.treatment : result.treatment.kn,
+    };
+    const prevention = {
+      en: typeof result.prevention === 'string' ? result.prevention : result.prevention.en,
+      hi: typeof result.prevention === 'string' ? result.prevention : result.prevention.hi,
+      kn: typeof result.prevention === 'string' ? result.prevention : result.prevention.kn,
+    };
 
-    if (lang === 'hi') {
-      return `${crop} में ${disease} की पहचान की गई है। उपचार: ${treatment}। रोकथाम: ${prevention}`;
-    } else if (lang === 'kn') {
-      return `${crop} ನಲ್ಲಿ ${disease} ಗುರುತಿಸಲಾಗಿದೆ. ಚಿಕಿತ್ಸೆ: ${treatment}. ತಡೆಗಟ್ಟುವಿಕೆ: ${prevention}`;
-    } else {
-      return `Detected ${disease} in ${crop}. Treatment: ${treatment}. Prevention: ${prevention}`;
-    }
+    return {
+      en: `Problem: ${disease.en} in ${crop.en}. Treatment: ${treatment.en}. Prevention: ${prevention.en}`,
+      hi: `समस्या: ${crop.hi} में ${disease.hi}. उपचार: ${treatment.hi}. रोकथाम: ${prevention.hi}`,
+      kn: `ಸಮಸ್ಯೆ: ${crop.kn} ನಲ್ಲಿ ${disease.kn}. ಚಿಕಿತ್ಸೆ: ${treatment.kn}. ತಡೆಗಟ್ಟುವಿಕೆ: ${prevention.kn}`,
+    };
   };
 
   const handleSpeak = () => {
     if (!detectionResult || isSpeaking) return;
 
-    const utterance = new SpeechSynthesisUtterance(generateSpokenText(detectionResult, currentLanguage));
+    // Generate multilingual text object
+    const multilingualText = generateMultilingualText(detectionResult);
     
-    // Set language code for speech synthesis
+    // Select text based on current language
+    const textToSpeak = multilingualText[currentLanguage as keyof typeof multilingualText] || multilingualText.en;
+
+    // Use browser's speech synthesis
+    const utterance = new SpeechSynthesisUtterance(textToSpeak);
+    
     const langCodes: { [key: string]: string } = {
       en: 'en-US',
       hi: 'hi-IN',
       kn: 'kn-IN'
     };
     utterance.lang = langCodes[currentLanguage] || 'en-US';
-    utterance.rate = 0.9; // Slightly slower for clarity
+    utterance.rate = 0.85; // Slower for farmer-friendly clarity
     utterance.pitch = 1.0;
 
     utterance.onstart = () => setIsSpeaking(true);
     utterance.onend = () => setIsSpeaking(false);
     utterance.onerror = () => setIsSpeaking(false);
 
-    window.speechSynthesis.cancel(); // Stop any ongoing speech
+    window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utterance);
+
+    // Log the multilingual JSON (can be sent to TTS API)
+    console.log('Multilingual TTS Payload:', JSON.stringify(multilingualText, null, 2));
   };
 
   return (
