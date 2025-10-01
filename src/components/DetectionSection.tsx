@@ -72,7 +72,7 @@ const DetectionSection: React.FC<DetectionSectionProps> = ({ translations, curre
     return {
       en: `Problem: ${disease.en} in ${crop.en}. Treatment: ${treatment.en}. Prevention: ${prevention.en}`,
       hi: `समस्या: ${crop.hi} में ${disease.hi}. उपचार: ${treatment.hi}. रोकथाम: ${prevention.hi}`,
-      kn: `ಸಮಸ್ಯೆ: ${crop.kn} ನಲ್ಲಿ ${disease.kn}. ಚಿಕಿತ್ಸೆ: ${treatment.kn}. ತಡೆಗಟ್ಟುವಿಕೆ: ${prevention.kn}`,
+      kn: `ನಿಮ್ಮ ${crop.kn} ಗೆ ${disease.kn} ಸಮಸ್ಯೆ ಇದೆ. ಚಿಕಿತ್ಸೆ: ${treatment.kn}. ತಡೆಗಟ್ಟುವುದು ಹೇಗೆ: ${prevention.kn}`,
     };
   };
 
