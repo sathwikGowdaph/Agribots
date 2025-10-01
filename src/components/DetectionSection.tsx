@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Camera, Upload, Scan, CheckCircle, AlertTriangle, Lightbulb } from 'lucide-react';
+import { Camera, Upload, Scan, CheckCircle, AlertTriangle, Lightbulb, Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -7,12 +7,14 @@ import { getRandomDisease } from '@/data/diseases';
 
 interface DetectionSectionProps {
   translations: any;
+  currentLanguage: string;
 }
 
-const DetectionSection: React.FC<DetectionSectionProps> = ({ translations }) => {
+const DetectionSection: React.FC<DetectionSectionProps> = ({ translations, currentLanguage }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isDetecting, setIsDetecting] = useState(false);
   const [detectionResult, setDetectionResult] = useState<any>(null);
+  const [isSpeaking, setIsSpeaking] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,6 +45,44 @@ const DetectionSection: React.FC<DetectionSectionProps> = ({ translations }) => 
   const openCamera = () => {
     // Mock camera functionality - in real app, this would open device camera
     alert("Camera functionality would open here. For demo, please use upload instead.");
+  };
+
+  const generateSpokenText = (result: any, lang: string): string => {
+    const disease = typeof result.disease === 'string' ? result.disease : result.disease[lang];
+    const crop = typeof result.crop === 'string' ? result.crop : result.crop[lang];
+    const treatment = typeof result.treatment === 'string' ? result.treatment : result.treatment[lang];
+    const prevention = typeof result.prevention === 'string' ? result.prevention : result.prevention[lang];
+
+    if (lang === 'hi') {
+      return `${crop} में ${disease} की पहचान की गई है। उपचार: ${treatment}। रोकथाम: ${prevention}`;
+    } else if (lang === 'kn') {
+      return `${crop} ನಲ್ಲಿ ${disease} ಗುರುತಿಸಲಾಗಿದೆ. ಚಿಕಿತ್ಸೆ: ${treatment}. ತಡೆಗಟ್ಟುವಿಕೆ: ${prevention}`;
+    } else {
+      return `Detected ${disease} in ${crop}. Treatment: ${treatment}. Prevention: ${prevention}`;
+    }
+  };
+
+  const handleSpeak = () => {
+    if (!detectionResult || isSpeaking) return;
+
+    const utterance = new SpeechSynthesisUtterance(generateSpokenText(detectionResult, currentLanguage));
+    
+    // Set language code for speech synthesis
+    const langCodes: { [key: string]: string } = {
+      en: 'en-US',
+      hi: 'hi-IN',
+      kn: 'kn-IN'
+    };
+    utterance.lang = langCodes[currentLanguage] || 'en-US';
+    utterance.rate = 0.9; // Slightly slower for clarity
+    utterance.pitch = 1.0;
+
+    utterance.onstart = () => setIsSpeaking(true);
+    utterance.onend = () => setIsSpeaking(false);
+    utterance.onerror = () => setIsSpeaking(false);
+
+    window.speechSynthesis.cancel(); // Stop any ongoing speech
+    window.speechSynthesis.speak(utterance);
   };
 
   return (
@@ -160,7 +200,7 @@ const DetectionSection: React.FC<DetectionSectionProps> = ({ translations }) => 
               <CardContent>
                 {detectionResult ? (
                   <div className="space-y-6">
-                    {/* Disease Info */}
+                     {/* Disease Info */}
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
                         <h3 className="text-xl font-semibold text-foreground">
@@ -173,6 +213,18 @@ const DetectionSection: React.FC<DetectionSectionProps> = ({ translations }) => 
                           {detectionResult.confidence}% {translations.detection.results.confidence}
                         </Badge>
                       </div>
+
+                      {/* Listen Button */}
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleSpeak}
+                        disabled={isSpeaking}
+                        className="w-full"
+                      >
+                        <Volume2 className={`h-4 w-4 mr-2 ${isSpeaking ? 'animate-pulse' : ''}`} />
+                        {isSpeaking ? 'Speaking...' : 'Listen to Explanation'}
+                      </Button>
                       
                       <div className="flex items-center gap-2">
                         <span className="text-sm text-muted-foreground">Crop:</span>

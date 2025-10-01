@@ -36,7 +36,7 @@ const Index = () => {
           onStartDetection={handleStartDetection}
         />
         
-        <DetectionSection translations={currentTranslations} />
+        <DetectionSection translations={currentTranslations} currentLanguage={currentLanguage} />
         
         <CommunitySection translations={currentTranslations} />
         
